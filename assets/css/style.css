@@ -1,0 +1,131 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    background-color: #24272E;
+    width: 30vw;
+    margin: 0 auto;
+    color: white;
+    font-family: sans-serif;
+}
+
+/*
+* ------styling for radio buttons (numberOfRounds)-------
+*/
+
+#radio-btn h3 {
+    margin: 0 0 5% 0;
+    padding-top: 5%;
+}
+
+#radio-btn {
+    margin: 5vh auto 0 auto;
+    padding-bottom: 5%;
+    text-align: center;
+    width: 30vw;
+}
+
+#radio-btn form {
+    width: 12vw;
+    height: 10vh;
+    margin: 0 auto;
+    border: 2px solid white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#radio-btn form div {
+    width: 18%;
+    margin-top: 2vh;
+}
+
+input[type=radio] {
+    margin-bottom: 2vh;
+}
+
+
+/*
+*  ------------styling roundsWonOutput----------------
+*/
+
+#roundsWonOutput {
+    width: 30vw;
+    margin: 0 auto;
+    padding: 10% 0;
+    display: flex;
+    justify-content: center;
+}
+
+#roundsWonOutput h4 {
+    font-size: 2rem;
+    font-weight: lighter;
+    margin: 0 8%;
+}
+
+
+#roundsWonOutput div {
+    display: flex;
+    width: 25%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#roundsWonOutput div p {
+    font-size: 2rem;
+}
+
+/*
+*  ------------the winner is output-------------
+*/
+
+#finalWinner {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: underline;
+    padding-bottom: 10%;
+    font-size: 2rem;
+}
+
+
+/*
+*  ------------buttons for rock, paper, scissors-------------
+*/
+
+#chooseYourMove {
+    padding: 5% 0 10% 0;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#chooseYourMove form {
+    padding: 5% 0 10% 0;
+}
+
+#chooseYourMove form button {
+    padding: 2% 5%;
+    border-radius: 10px;
+}
+
+/*
+*  -----------------------restart game-----------------------
+*/
+
+#boxRestart {
+    width: 20%;
+    padding: 8% 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#restart {
+    display: inline;
+    color: orange;
+    text-decoration: underline;
+    cursor: pointer;
+}
