@@ -63,7 +63,13 @@ function chooseStone() {
         document.getElementById("compOrUserWinOrDraw").innerHTML = "User gewinnt";
     } 
 
-    stopGameAtRoundZero();
+    if (rounds === 0 && computerWins === userWins) {
+        document.getElementById("finalWinner").innerHTML = "Unentschieden";
+    } else if (rounds === 0 && computerWins < userWins) {
+        document.getElementById("finalWinner").innerHTML = "User gewinnt";
+    } else if (rounds === 0) {
+        document.getElementById("finalWinner").innerHTML = "Computer gewinnt";
+    }
 }
 
 
@@ -89,7 +95,13 @@ function choosePaper() {
         document.getElementById("compOrUserWinOrDraw").innerHTML = "User gewinnt";
     }
 
-    stopGameAtRoundZero();
+    if (rounds === 0 && computerWins === userWins) {
+        document.getElementById("finalWinner").innerHTML = "Unentschieden";
+    } else if (rounds === 0 && computerWins < userWins) {
+        document.getElementById("finalWinner").innerHTML = "User gewinnt";
+    } else if (rounds === 0) {
+        document.getElementById("finalWinner").innerHTML = "Computer gewinnt";
+    }
 }
 
 // berechnung für schere
@@ -113,11 +125,6 @@ function chooseScissors() {
         document.getElementById("compOrUserWinOrDraw").innerHTML = "Computer gewinnt";
     }
 
-    stopGameAtRoundZero();
-}
-
-// gibt den gewinner aus wenn runde 0 erreicht ist
-const stopGameAtRoundZero = () => {
     if (rounds === 0 && computerWins === userWins) {
         document.getElementById("finalWinner").innerHTML = "Unentschieden";
     } else if (rounds === 0 && computerWins < userWins) {
@@ -125,6 +132,11 @@ const stopGameAtRoundZero = () => {
     } else if (rounds === 0) {
         document.getElementById("finalWinner").innerHTML = "Computer gewinnt";
     }
+}
+
+// gibt den gewinner aus wenn runde 0 erreicht ist
+const stopGameAtRoundZero = () => {
+    
 }
 
 // bei klick auf restart rundenanzahl,compWins,userWins auf 0
