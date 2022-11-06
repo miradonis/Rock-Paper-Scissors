@@ -1,6 +1,7 @@
 
 // ausgewählte rundenanzahl
 let rounds = 0;
+console.log(rounds);
 
 // aktuelle spielrunde
 let currentRound = 0;
@@ -33,116 +34,100 @@ function addRounds() {
         rounds = 20;
         console.log("jetzt 20");
     }
-}    
+    console.log(rounds);
+}
+
+console.log(rounds);
 
 
 // berechnung für stein
 function chooseStone() {
     const btnStone = Number(document.getElementById("stone").value);
-    
+    rounds--;
+    console.log(rounds);
+
 
     //random nummer für den computer
     let compChoose = Math.floor(Math.random() * 3);
 
     // vergleiche wenn user stein auswählt
     if (btnStone === compChoose) {
-        console.log("unentschieden");
-        rounds -- ;
+        document.getElementById("compOrUserWinOrDraw").innerHTML = "Unentschieden";
     } else if (compChoose === 1) {
-        console.log("comp gewinnt");
         computerWins ++;
-        rounds --;
         document.getElementById("computerWins").innerHTML = computerWins;
+        document.getElementById("compOrUserWinOrDraw").innerHTML = "Computer gewinnt";
     } else {
-        console.log("ich gewinne");
         userWins ++;
         document.getElementById("userWins").innerHTML = userWins;
-        rounds --;
+        document.getElementById("compOrUserWinOrDraw").innerHTML = "User gewinnt";
     } 
 
-    if (rounds === 0 && computerWins === userWins) {
-        console.log("Unentschieden");
-        document.getElementById("finalWinner").innerHTML = "Unentschieden";
-    } else if (rounds === 0 && computerWins < userWins) {
-        console.log("Ich habe gewonnen");
-        document.getElementById("finalWinner").innerHTML = "User gewinnt";
-    } else if (rounds === 0) {
-        console.log("Computer hat gewonnen");
-        document.getElementById("finalWinner").innerHTML = "Computer gewinnt";
-    }
+    stopGameAtRoundZero();
 }
+
+
 
 // berechnung für papier
 function choosePaper() {
     const btnPaper = Number(document.getElementById("paper").value);
+    rounds--;
 
     //random nummer für den computer
     let compChoose = Math.floor(Math.random() * 3);
 
     // vergleiche wenn user papier auswählt
     if (btnPaper === compChoose) {
-        console.log("unentschieden");
-        rounds -- ;
+        document.getElementById("compOrUserWinOrDraw").innerHTML = "Unentschieden";
     } else if (compChoose === 2) {
-        console.log("comp gewinnt");
         computerWins ++;
         document.getElementById("computerWins").innerHTML = computerWins;
-        rounds -- ;
+        document.getElementById("compOrUserWinOrDraw").innerHTML = "Computer gewinnt";
     } else {
-        console.log("ich gewinne");
         userWins ++;
         document.getElementById("userWins").innerHTML = userWins;
-        rounds -- ;
+        document.getElementById("compOrUserWinOrDraw").innerHTML = "User gewinnt";
     }
 
-    if (rounds === 0 && computerWins === userWins) {
-        console.log("Unentschieden");
-        document.getElementById("finalWinner").innerHTML = "Unentschieden";
-    } else if (rounds === 0 && computerWins < userWins) {
-        console.log("Ich habe gewonnen");
-        document.getElementById("finalWinner").innerHTML = "User gewinnt";
-    } else if (rounds === 0) {
-        console.log("Computer hat gewonnen");
-        document.getElementById("finalWinner").innerHTML = "Computer gewinnt";
-    }
+    stopGameAtRoundZero();
 }
 
 // berechnung für schere
 function chooseScissors() {
     const btnScissors = Number(document.getElementById("scissors").value);
+    rounds--;
 
     // random nummer für den computer
     let compChoose = Math.floor(Math.random() * 3);
 
     // vergleiche wenn user schere auswählt
     if (btnScissors === compChoose) {
-        console.log("unentschieden");
-        rounds -- ;
+        document.getElementById("compOrUserWinOrDraw").innerHTML = "Unentschieden";
     } else if (compChoose === 1) {
-        console.log("ich gewinne");
         userWins ++;
         document.getElementById("userWins").innerHTML = userWins;
-        rounds -- ;
+        document.getElementById("compOrUserWinOrDraw").innerHTML = "User gewinnt";
     } else {
-        console.log("comp gewinnt");
         computerWins ++;
         document.getElementById("computerWins").innerHTML = computerWins;
-        rounds -- ;
+        document.getElementById("compOrUserWinOrDraw").innerHTML = "Computer gewinnt";
     }
 
+    stopGameAtRoundZero();
+}
+
+// gibt den gewinner aus wenn runde 0 erreicht ist
+const stopGameAtRoundZero = () => {
     if (rounds === 0 && computerWins === userWins) {
-        console.log("Unentschieden");
         document.getElementById("finalWinner").innerHTML = "Unentschieden";
     } else if (rounds === 0 && computerWins < userWins) {
-        console.log("Ich habe gewonnen");
         document.getElementById("finalWinner").innerHTML = "User gewinnt";
     } else if (rounds === 0) {
-        console.log("Computer hat gewonnen");
         document.getElementById("finalWinner").innerHTML = "Computer gewinnt";
     }
 }
 
-
+// bei klick auf restart rundenanzahl,compWins,userWins auf 0
 function restartGame() {
     rounds = 0;
     document.getElementById("userWins").innerHTML = 0;
