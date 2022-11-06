@@ -24,28 +24,35 @@ function addRounds() {
     if (fiveRounds) {
         rounds = 5;
         console.log("jetzt 5");
+        console.log(rounds);    
     } else if (tenRounds) {
         rounds = 10;
         console.log("jetzt 10");
+        console.log(rounds);
     } else if (fifteenRounds) {
         rounds = 15;
         console.log("jetzt 15");
+        console.log(rounds);
     } else {
         rounds = 20;
         console.log("jetzt 20");
-    }
     console.log(rounds);
 }
-
+}
 console.log(rounds);
 
 
 // berechnung für stein
 function chooseStone() {
     const btnStone = Number(document.getElementById("stone").value);
+    console.log("Runden: " + rounds);
     rounds--;
-    console.log(rounds);
+    console.log("Runden: " + rounds);
 
+    if (rounds < 5) {
+        alert("Bitte Runden wählen");
+        window.location.reload();
+    }
 
     //random nummer für den computer
     let compChoose = Math.floor(Math.random() * 3);
@@ -77,7 +84,14 @@ function chooseStone() {
 // berechnung für papier
 function choosePaper() {
     const btnPaper = Number(document.getElementById("paper").value);
+    console.log("Runden: " + rounds);
     rounds--;
+    console.log("Runden: " + rounds);
+
+    if (rounds < 5) {
+        alert("Bitte Runden wählen");
+        window.location.reload();
+    }
 
     //random nummer für den computer
     let compChoose = Math.floor(Math.random() * 3);
@@ -107,7 +121,14 @@ function choosePaper() {
 // berechnung für schere
 function chooseScissors() {
     const btnScissors = Number(document.getElementById("scissors").value);
+    console.log("Runden: " + rounds);
     rounds--;
+    console.log("Runden: " + rounds);
+
+    if (rounds < 5) {
+        alert("Bitte Runden wählen");
+        window.location.reload();
+    }
 
     // random nummer für den computer
     let compChoose = Math.floor(Math.random() * 3);
@@ -133,19 +154,3 @@ function chooseScissors() {
         document.getElementById("finalWinner").innerHTML = "Computer gewinnt";
     }
 }
-
-// gibt den gewinner aus wenn runde 0 erreicht ist
-// const stopGameAtRoundZero = () => {
-    
-// }
-
-// bei klick auf restart rundenanzahl,compWins,userWins auf 0
-// funktioniert nicht
-// function restartGame() {
-//     rounds = 0;
-//     computerWins = 0;
-//     userWins = 0;
-//     document.getElementById("userWins").innerHTML = 0;
-//     document.getElementById("computerWins").innerHTML = 0;
-//     document.getElementById("finalWinner").innerHTML = "The Winner is";
-// }
