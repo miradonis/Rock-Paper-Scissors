@@ -142,8 +142,9 @@ const stopGameAtRoundZero = () => {
 // bei klick auf restart rundenanzahl,compWins,userWins auf 0
 function restartGame() {
     rounds = 0;
+    computerWins = 0;
+    userWins = 0;
     document.getElementById("userWins").innerHTML = 0;
     document.getElementById("computerWins").innerHTML = 0;
     document.getElementById("finalWinner").innerHTML = "The Winner is";
-    computerWins = 0;
 }
