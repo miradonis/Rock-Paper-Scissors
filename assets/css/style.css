@@ -54,7 +54,7 @@ input[type=radio] {
 #roundsWonOutput {
     width: 30vw;
     margin: 0 auto;
-    padding: 10% 0;
+    padding: 10% 0 7% 0;
     display: flex;
     justify-content: center;
 }
@@ -107,7 +107,7 @@ input[type=radio] {
 }
 
 #chooseYourMove form {
-    padding: 10% 0 7% 0;
+    padding: 5% 0 10% 0;
 }
 
 #chooseYourMove form button {
@@ -119,6 +119,20 @@ input[type=radio] {
 #chooseYourMove form button:nth-of-type(2) {
     margin: 0 5%;
 }
+
+#userChoose {
+    padding-top: 8%;
+    font-size: .8rem;
+}
+
+#chooseYourMove h2 {
+    color: green;
+}
+
+#chooseYourMove h3 {
+    font-size: 1rem;
+}
+
 
 /*
 *  -----------------------restart game-----------------------

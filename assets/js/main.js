@@ -1,7 +1,6 @@
 
 // ausgewählte rundenanzahl
 let rounds = 0;
-console.log(rounds);
 
 // aktuelle spielrunde
 let currentRound = 0;
@@ -36,10 +35,10 @@ function addRounds() {
     } else {
         rounds = 20;
         console.log("jetzt 20");
-    console.log(rounds);
+        console.log(rounds);
+    }
 }
-}
-console.log(rounds);
+
 
 
 // berechnung für stein
@@ -48,11 +47,7 @@ function chooseStone() {
     console.log("Runden: " + rounds);
     rounds--;
     console.log("Runden: " + rounds);
-
-    if (rounds < 5) {
-        alert("Bitte Runden wählen");
-        window.location.reload();
-    }
+    document.getElementById("userChoose").innerHTML = "Stone";
 
     //random nummer für den computer
     let compChoose = Math.floor(Math.random() * 3);
@@ -87,11 +82,7 @@ function choosePaper() {
     console.log("Runden: " + rounds);
     rounds--;
     console.log("Runden: " + rounds);
-
-    if (rounds < 5) {
-        alert("Bitte Runden wählen");
-        window.location.reload();
-    }
+    document.getElementById("userChoose").innerHTML = "Paper";
 
     //random nummer für den computer
     let compChoose = Math.floor(Math.random() * 3);
@@ -118,39 +109,45 @@ function choosePaper() {
     }
 }
 
-// berechnung für schere
-function chooseScissors() {
-    const btnScissors = Number(document.getElementById("scissors").value);
-    console.log("Runden: " + rounds);
-    rounds--;
-    console.log("Runden: " + rounds);
+// // berechnung für schere
+// function chooseScissors() {
+//     const btnScissors = Number(document.getElementById("scissors").value);
+//     console.log("Runden: " + rounds);
+//     rounds--;
+//     console.log("Runden: " + rounds);
+//     document.getElementById("userChoose").innerHTML = "Scissors";
 
-    if (rounds < 5) {
-        alert("Bitte Runden wählen");
-        window.location.reload();
-    }
+//     // random nummer für den computer
+//     let compChoose = Math.floor(Math.random() * 3);
 
-    // random nummer für den computer
-    let compChoose = Math.floor(Math.random() * 3);
+//     // vergleiche wenn user schere auswählt
+//     if (btnScissors === compChoose) {
+//         document.getElementById("compOrUserWinOrDraw").innerHTML = "Unentschieden";
+//     } else if (compChoose === 1) {
+//         userWins ++;
+//         document.getElementById("userWins").innerHTML = userWins;
+//         document.getElementById("compOrUserWinOrDraw").innerHTML = "User gewinnt";
+//     } else {
+//         computerWins ++;
+//         document.getElementById("computerWins").innerHTML = computerWins;
+//         document.getElementById("compOrUserWinOrDraw").innerHTML = "Computer gewinnt";
+//     }
 
-    // vergleiche wenn user schere auswählt
-    if (btnScissors === compChoose) {
-        document.getElementById("compOrUserWinOrDraw").innerHTML = "Unentschieden";
-    } else if (compChoose === 1) {
-        userWins ++;
-        document.getElementById("userWins").innerHTML = userWins;
-        document.getElementById("compOrUserWinOrDraw").innerHTML = "User gewinnt";
-    } else {
-        computerWins ++;
-        document.getElementById("computerWins").innerHTML = computerWins;
-        document.getElementById("compOrUserWinOrDraw").innerHTML = "Computer gewinnt";
-    }
+//     if (rounds === 0 && computerWins === userWins) {
+//         document.getElementById("finalWinner").innerHTML = "Unentschieden";
+//     } else if (rounds === 0 && computerWins < userWins) {
+//         document.getElementById("finalWinner").innerHTML = "User gewinnt";
+//     } else if (rounds === 0) {
+//         document.getElementById("finalWinner").innerHTML = "Computer gewinnt";
+//     }
+// }
 
-    if (rounds === 0 && computerWins === userWins) {
-        document.getElementById("finalWinner").innerHTML = "Unentschieden";
-    } else if (rounds === 0 && computerWins < userWins) {
-        document.getElementById("finalWinner").innerHTML = "User gewinnt";
-    } else if (rounds === 0) {
-        document.getElementById("finalWinner").innerHTML = "Computer gewinnt";
-    }
-}
+
+//  if (rounds < 5) {
+//         alert("Bitte Runden wählen");
+//         window.location.reload();
+//     }
+
+
+// ist die let rounds außerhalb der fnktion möglich ?
+// wie kann ich ergebnisse einer funktion einer anderen mitgeben ?
