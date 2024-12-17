@@ -11,60 +11,63 @@
 
 <body>
     <main>
-        <!--
-                select number of rounds
-            -->
-        <article id="radio-btn">
-            <h3>how many rounds</h3>
-            <form>
+        <section class="game-wrapper">
+            <h1>Let´s Play</h1>
+            <div class="lineTop"></div>
+            <h2>How many rounds?</h2>
+
+            <!-- ? select number of rounds -->
+            <article id="radio-btn">
+                <label for="5Rounds">5 <input type="radio" id="5Rounds" value="5" name="numberOfRounds"
+                        onclick="addRounds()"></label>
+
+                <label for="10Rounds">10 <input type="radio" id="10Rounds" value="10" name="numberOfRounds"
+                        onclick="addRounds()"></label>
+
+                <label for="15Rounds">15 <input type="radio" id="15Rounds" value="15" name="numberOfRounds"
+                        onclick="addRounds()"></label>
+
+                <label for="20Rounds">20 <input type="radio" id="20Rounds" value="20" name="numberOfRounds"
+                        onclick="addRounds()"></label>
+            </article>
+
+            <!--? buttons for rock, paper, scissors and start game -->
+            <article id="chooseYourMove">
+
+                <p id="userChoose">Choose rock, paper or scissors</p>
+                <article class="btn">
+                    <button id="stone" class="move" value="0">✊🏻</button>
+                    <button id="paper" class="move" value="1">🤚🏻</button>
+                    <button id="scissors" class="move" value="2">✌🏻</button>
+                </article>
+                <p id="whoChoosedWhat"></p>
+            </article>
+
+
+            <!-- ? final winner, computerWins, userWins -->
+            <article id="roundsWonOutput">
                 <div>
-                    <input type="radio" id="5Rounds" value="5" name="numberOfRounds" onclick="addRounds()"> 5
-                    <input type="radio" id="10Rounds" value="10" name="numberOfRounds" onclick="addRounds()"> 10
-                    <input type="radio" id="15Rounds" value="15" name="numberOfRounds" onclick="addRounds()"> 15
-                    <input type="radio" id="20Rounds" value="20" name="numberOfRounds" onclick="addRounds()"> 20
+                    <p>User</p>
+                    <p id="userWins">0</p>
                 </div>
-            </form>
-        </article>
+                <div>
+                    <p id="computerWins">0</p>
+                    <p>Comp</p>
+                </div>
+            </article>
 
-
-        <!--
-                final winner
-                computerWins
-                userWins
-            -->
-        <article id="roundsWonOutput">
-            <h4 for="userWins">User</h4>
             <div>
-                <p id="userWins">0</p>
-                <p id="computerWins">0</p>
+                <p id="winnerCurrentRound"></p>
             </div>
-            <h4 for="computerWins">Comp</h4>
-        </article>
-
-        <div id="finalWinner">The Winner is</div>
 
 
-        <!--
-                buttons for rock, paper, scissors
-                and start game
-            -->
-        <article id="chooseYourMove">
-            <h2 id="compOrUserWinOrDraw">Let´s Play</h2>
-            <p id="userChoose">Choose rock, paper, scissors</p>
-            <form>
-                <button type="button" id="stone" class="move" value="0" onclick="chooseStone()">✊🏻</button>
-                <button type="button" id="paper" class="move" value="1" onclick="choosePaper()">🤚🏻</button>
-                <button type="button" id="scissors" class="move" value="2" onclick="chooseScissors()">✌🏻</button>
-            </form>
-            <h3>MAKE YOUR MOVE.</h3>
-        </article>
-
-        <!--
-                restart game
-        -->
-        <div id="boxRestart">
-            <p id="restart" onclick="location.reload()">restart</p>
-        </div>
+            <!-- ? line before restart button -->
+            <div class="lineBottom"></div>
+            <!-- ? restart game -->
+            <div id="boxRestart">
+                <p id="restart" onclick="location.reload()">Restart</p>
+            </div>
+        </section>
 
 
 
@@ -72,7 +75,7 @@
 
 
 
-    <script src="./assets/js/main.js"></script>
+    <script src="./dist/main.js"></script>
 </body>
 
 </html>

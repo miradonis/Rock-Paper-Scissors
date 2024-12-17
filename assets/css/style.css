@@ -1,152 +1,164 @@
+@font-face {
+    font-family: "IBM-Regular";
+    src: url("../fonts/IBMPlexMono-Regular.ttf");
+}
+
+/* ANCHOR general styling */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+html {
+    font-size: 62.5%;
+    font-family: "IBM-Regular";
+}
+
+/* SECTION main */
 main {
-    background-color: #24272E;
+    height: 100vh;
+    background-image: linear-gradient(to right top, #051937, #002a47, #003948, #004637, #0a511c);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10vh 0;
+}
+
+.game-wrapper {
     width: 30vw;
     margin: 0 auto;
-    color: white;
-    font-family: sans-serif;
+    text-align: center;
+    padding: 5vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* + glasmorphism */
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 2px solid #2b4f0a;
 }
 
-/*
-* ------styling for radio buttons (numberOfRounds)-------
-*/
-
-#radio-btn h3 {
-    margin: 0 0 5% 0;
-    padding-top: 5%;
+h1 {
+    font-size: clamp(1.2rem, 2.5vw, 4rem);
+    margin-bottom: 1vh;
 }
+
+.lineTop {
+    height: .5px;
+    width: 25vw;
+    background-color: #3c6e0e;
+    margin-bottom: 7vh;
+}
+
+.lineBottom {
+    height: .5px;
+    width: 25vw;
+    background-color: #3c6e0e;
+    margin: 7vh 0 1vh 0;
+}
+
+h2 {
+    font-size: clamp(1rem, 1.5vw, 2rem);
+    margin-bottom: 2vh;
+}
+
+/*? styling for radio buttons (numberOfRounds) */
 
 #radio-btn {
-    margin: 5vh auto 0 auto;
-    padding-bottom: 3%;
-    text-align: center;
-    width: 30vw;
-}
-
-#radio-btn form {
-    width: 45%;
-    height: 6vh;
-    margin: 0 auto;
-    border-bottom: 1px solid white;
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
+    justify-content: center;
+    gap: 0 1.5em;
+    margin-bottom: 15%;
 }
 
-#radio-btn form div {
-    width: 75%;
-    margin: 2vh auto 0 auto;
+label {
+    font-size: clamp(.8rem, 1vw, 1.5rem);
+    display: flex;
+    align-items: center;
+    gap: 0 3px;
 }
 
 input[type=radio] {
-    margin-left: 4%;
+    accent-color: orange;
 }
 
+/* SECTION buttons for rock, paper, scissors */
 
-/*
-*  ------------styling roundsWonOutput----------------
-*/
+#chooseYourMove {
+    min-width: 90%;
+}
 
-#roundsWonOutput {
-    width: 30vw;
-    margin: 0 auto;
-    padding: 10% 0 7% 0;
+#chooseYourMove p:nth-of-type(1) {
+    font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+    margin-bottom: 10%;
+}
+
+#chooseYourMove .btn {
+    margin-bottom: 5%;
     display: flex;
     justify-content: center;
+    gap: 0 10%;
 }
 
-#roundsWonOutput h4 {
-    font-size: 1.6rem;
-    font-weight: lighter;
-    margin: 0 8%;
-    background-color: tomato;
+#chooseYourMove .btn button {
+    padding: 5% 10%;
+    border-radius: 10px;
+    border: transparent;
+    background-color: rgba(255, 166, 0, 0.453);
 }
 
+/* after display: none; buttons show the p in red */
+#chooseYourMove .btn p {
+    color: red;
+}
+
+#whoChoosedWhat {
+    font-size: clamp(1rem, 1vw, 1.3rem);
+    margin-bottom: 4%;
+    height: 2em;
+}
+
+
+/* SECTION styling roundsWonOutput */
+#roundsWonOutput {
+    display: flex;
+    justify-content: center;
+    gap: 0 4em;
+    margin-bottom: 5%;
+}
 
 #roundsWonOutput div {
     display: flex;
-    width: 25%;
     align-items: center;
-    justify-content: space-between;
+    gap: 0 1em;
+    font-size: clamp(1.2rem, 1.5vw, 1.8rem);
 }
 
-#roundsWonOutput div p {
-    font-size: 1.6rem;
+/* ? winner current output */
+#winnerCurrentRound {
+    height: 3em;
 }
 
-/*
-*  ------------the winner is output-------------
-*/
+/*? the winner is output */
 
 #finalWinner {
     width: 50%;
     margin: 0 auto;
     text-align: center;
     padding-bottom: 5%;
-    font-size: 1.6rem;
+    font-size: clamp(1rem, 1.3vw, 1.6rem);
 }
 
 
-/*
-*  ------------buttons for rock, paper, scissors-------------
-*/
-
-#chooseYourMove {
-    padding: 5% 0 10% 0;
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-}
-
-#compOrUserWinOrDraw {
-    font-size: 1.2rem;
-}
-
-#chooseYourMove form {
-    padding: 5% 0 10% 0;
-}
-
-#chooseYourMove form button {
-    padding: 2% 5%;
-    border-radius: 10px;
-    border: transparent;
-}
-
-#chooseYourMove form button:nth-of-type(2) {
-    margin: 0 5%;
-}
-
-#userChoose {
-    padding-top: 8%;
-    font-size: .8rem;
-}
-
-#chooseYourMove h2 {
-    color: green;
-}
-
-#chooseYourMove h3 {
-    font-size: 1rem;
-}
-
-
-/*
-*  -----------------------restart game-----------------------
-*/
-
-#boxRestart {
-    width: 20%;
-    padding: 3% 0 10% 0;
-    margin: 0 auto;
-    text-align: center;
-}
-
+/*? restart game */
 #restart {
-    display: inline;
+    font-size: clamp(1rem, 1.3vw, 1.8rem);
     color: orange;
     text-decoration: underline;
     cursor: pointer;
