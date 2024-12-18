@@ -16,7 +16,6 @@ Der aktuelle Stand des Projekts ist noch in Entwicklung, jedoch sind bereits fol
 <br>
 
 <h3>📸 Screenshots</h3>
-<br>
 
 <div align="left"> <img src="./assets/img/showGame.png" alt="Rock Paper Scissors Game Screenshot" width="400"> </div>
 
