@@ -18,63 +18,90 @@ html {
 /* SECTION main */
 main {
     height: 100vh;
-    background-image: linear-gradient(to right top, #051937, #002a47, #003948, #004637, #0a511c);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 5vh 0;
+    background-color: rgb(244, 243, 243);
+    background-image: url("../img/background.png");
+    display: flex;
+    justify-content: space-between;
+    padding: 5vh 7vw;
 }
 
-.game-wrapper {
+/* SECTION part left */
+.heading-part-left {
     width: 30vw;
-    margin: 0 auto;
-    text-align: center;
-    padding: 5vh 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+}
 
+.heading-part-left h1 {
+    font-size: clamp(1.8rem, 3vw, 5rem);
+    color: #7D29EA;
+    /* width: 20vw; */
+    margin: 5vh 0 7vh 0;
+}
+
+.heading-part-left > article {
     /* + glasmorphism */
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.693);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 2px solid #2b4f0a;
+    border: 2px solid #861ecf;
+
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
 }
 
-h1 {
-    font-size: clamp(1.2rem, 2.5vw, 4rem);
-    margin-bottom: 1vh;
-}
-
-.lineTop {
-    height: .5px;
-    width: 25vw;
-    background-color: #3c6e0e;
+.userName {
+    text-align: center;
+    font-size: clamp(1rem, 1.5vw, 1.8rem);
     margin-bottom: 7vh;
+    display: flex;
+    align-items: baseline;
+    gap: 0 2em;
 }
 
-.lineBottom {
-    height: .5px;
-    width: 25vw;
-    background-color: #3c6e0e;
-    margin: 7vh 0 1vh 0;
+.userName input {
+    border-color: #7D29EA;
+    padding: .5em 5em .5em 1em;
+    border-radius: 8px;
+    outline: none;
 }
 
-h2 {
-    font-size: clamp(1rem, 1.5vw, 2rem);
-    margin-bottom: 2vh;
+.userName button {
+    font-size: clamp(1rem, 1.5vw, 1.8rem);
+    color: #7D29EA;
+    background-color: transparent;
+    border: 2px solid #7D29EA;
+    border-radius: 8px;
+    padding: .3em 3em;
+    /* width: 50%; */
+    margin-top: 2vh;
+    cursor: pointer;
+    transition: all .5s linear;
+}
+
+.userName button:hover {
+    background-color: #7D29EA;
+    color: white;
 }
 
 /*? styling for radio buttons (numberOfRounds) */
 
-#radio-btn {
+.radio-btn {
+    /* margin-bottom: 5em; */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0 1.5em;
-    margin-bottom: 15%;
+    flex-direction: column;
+}
+
+.radio-btn > p {
+    font-size: clamp(1rem, 1.3vw, 1.8rem);
+    margin-bottom: 4%;
+}
+
+.radio-btn div {
+    display: flex;
+    gap: 3em;
+    margin-bottom: 3em;
 }
 
 label {
@@ -85,92 +112,270 @@ label {
 }
 
 input[type=radio] {
-    accent-color: orange;
+    accent-color: #7D29EA;
 }
+
+.radio-btn div p {
+    color: red;
+    font-size: clamp(.8rem, 1.4vw, 1.8rem);
+    margin-left: 5%;
+}
+
+/*SECTION Modal */
+.modal-container {
+    z-index: 1;
+    background-color: #2b4f0a;
+    color: black;
+    border-radius: 16px;
+    width: 60em;
+    padding: 2%;
+    position: absolute;
+    top: 9.5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+
+}
+.modal {
+    display: none;
+}
+
+/* show/hide game rules */
+.rules-btn {
+    font-size: clamp(1rem, 1.5vw, 2rem);
+    padding: .5% 1%;
+    /* background-color: ; */
+    background-color: black;
+    border: 1px solid #2b4f0a;
+    color: #2b4f0a;
+    border-radius: 16px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.close-icon-wrapper {
+    background-color: #2b4f0a;
+    border-radius: 20px;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* SECTION explanation */
+.explanation {
+    padding-left: 2%;
+}
+
+.explanation h2 {
+    font-size: clamp(1.5rem, 1.8vw, 2rem);
+    margin-bottom: 3em;
+}
+
+.explanation h3 {
+    font-size: clamp(1rem, 1.2vw, 1.6rem);
+    text-decoration: underline;
+    margin-bottom: .3em;
+}
+
+.explanation p {
+    font-size: clamp(1rem, 1vw, 1.2rem);
+    margin-bottom: 4em;
+    line-height: 15px;
+}
+
+.explanation ul {
+    margin-bottom: 20px;
+}
+
+.explanation ul li {
+    font-size: clamp(1rem, 1vw, 1.2rem);
+    margin-left: 30px;
+    line-height: 15px;
+}
+
+
+/* SECTION game wrapper */
+.game-wrapper {
+    height: 90vh;
+    width: 40vw;
+    padding-top: 3vh;
+
+    /* + glasmorphism */
+    background: rgba(255, 255, 255, 0.693);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 2px solid #861ecf;
+}
+
+.game-wrapper-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-wrapper-header h2 {
+    font-size: clamp(1rem, 1.5vw, 2.5rem);
+    margin-bottom: 5vh;
+}
+
+.game-wrapper-header article {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 10vh;
+}
+
+.game-wrapper-header article img:nth-of-type(1) {
+    transform: rotate(70deg);
+}
+
+/* SECTION rounds won output */
+.rounds-won-output {
+    font-size: clamp(1rem, 1.3vw, 1.8rem);
+    margin-bottom: 7vh;
+}
+
+.rounds-won-output article:nth-of-type(1) {
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+}
+
+.rounds-won-output article:nth-of-type(1) div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+#userWins,
+#computerWins {
+    color: #7D29EA;
+    font-weight: 800;
+    font-size: clamp(1.3rem, 1.8vw, 2.5rem);
+}
+
+/* SECTION choose your move */
+.choose-your-move {}
+
+.choose-your-move article {
+    display: flex;
+    justify-content: center;
+    gap: 0 7em;
+}
+
+.move {
+    background-color: transparent;
+    border: none;
+}
+
+
+
+
+
 
 /* SECTION buttons for rock, paper, scissors */
 
-#chooseYourMove {
-    min-width: 90%;
+/* #chooseYourMove {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #chooseYourMove p:nth-of-type(1) {
     font-size: clamp(1.2rem, 1.5vw, 1.8rem);
-    margin-bottom: 10%;
-}
+    margin-bottom: 6%;
+} */
 
-#chooseYourMove .btn {
-    margin-bottom: 5%;
+/* #chooseYourMove .btn {
+    width: 90%;
+    height: 8em;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 0 5%;
-}
+} */
 
-#chooseYourMove .btn button {
+/* #chooseYourMove .btn button {
     padding: 0 5%;
     border-radius: 10px;
     border: transparent;
     background-color: rgba(255, 166, 0, 0);
-}
+} */
 
-#chooseYourMove .btn button img {
+/* #chooseYourMove .btn button img {
 width: 80px;
+height: auto;
 cursor: pointer;
-}
-
-#chooseYourMove .btn button:nth-of-type(3) img {
-height: 90px;
-width: 60px;
-}
+} */
 
 
 /* after display: none; buttons show the p in red */
-#chooseYourMove .btn p {
+/* #chooseYourMove .btn p {
     color: red;
-}
+    height: 5em;
+    font-size: clamp(1rem, 1.5vw, 2rem);
+} */
 
-#whoChoosedWhat {
+/* #whoChoosedWhat {
     font-size: clamp(1rem, 1vw, 1.3rem);
     margin-bottom: 4%;
     height: 2em;
-}
+} */
 
 
 /* SECTION styling roundsWonOutput */
-#roundsWonOutput {
+/* #roundsWonOutput {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     gap: 0 4em;
-    margin-bottom: 5%;
-}
+    margin-bottom: 5em;
+} */
 
-#roundsWonOutput div {
+/* #roundsWonOutput article:nth-of-type(1) {
+    display: flex;
+    gap: 0 5em;
+} */
+
+/* #roundsWonOutput article:nth-of-type(1) div {
     display: flex;
     align-items: center;
     gap: 0 1em;
-    font-size: clamp(1.2rem, 1.5vw, 1.8rem);
-}
+} */
 
 /* ? winner current output */
-#winnerCurrentRound {
+/* #winnerCurrentRound {
     height: 3em;
-}
+} */
 
 /*? the winner is output */
 
-#finalWinner {
+/* #finalWinner {
     width: 50%;
     margin: 0 auto;
     text-align: center;
     padding-bottom: 5%;
     font-size: clamp(1rem, 1.3vw, 1.6rem);
-}
+} */
 
 
 /*? restart game */
-#restart {
+/* #restart {
     font-size: clamp(1rem, 1.3vw, 1.8rem);
     color: orange;
     text-decoration: underline;
     cursor: pointer;
-}
+    margin-bottom: 10vh;
+} */

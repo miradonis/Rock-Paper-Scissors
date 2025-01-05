@@ -11,72 +11,161 @@
 
 <body>
     <main>
+        <section class="heading-part-left">
+            <h1>ROCK PAPER SCISSORS</h1>
+
+            <article>
+
+                <!-- + input field for name -->
+                <article class="userName">
+                    <div>
+                        <!-- <label for="userName">Gib deinen Namen ein</label> -->
+                        <input type="text" name="" id="userName" placeholder="Your name">
+                    </div>
+                    <button type="submit">Trallala</button>
+                </article>
+
+
+                <!-- select number of rounds -->
+                <article class="radio-btn">
+                    <p class="choose-rounds">Choose rounds</p>
+                    <div>
+                        <label for="5Rounds">5 <input type="radio" id="5Rounds" value="5" name="numberOfRounds"></label>
+
+                        <label for="10Rounds">10 <input type="radio" id="10Rounds" value="10"
+                                name="numberOfRounds"></label>
+
+                        <label for="15Rounds">15 <input type="radio" id="15Rounds" value="15"
+                                name="numberOfRounds"></label>
+
+                        <label for="20Rounds">20 <input type="radio" id="20Rounds" value="20"
+                                name="numberOfRounds"></label>
+                        <p>Choose rounds</p>
+                    </div>
+                </article>
+            </article>
+        </section>
+        <!-- + Explanation -->
+        <!-- <div>
+            <button class="rules-btn">Spielregeln</button>
+        </div> -->
+
+        <!-- <div class="modal-container">
+            <div>
+                <div class="close-icon-wrapper">
+                    <img class="close-icon" src="./assets/img/close-icon.svg" alt="">
+                </div>
+                <section class="explanation">
+                    <h2>Schere, Stein, Papier ist ein klassisches Spiel, das du in dieser Online-Version gegen den
+                        Computer
+                        spielen kannst.</h2>
+                    <article>
+                        <h3>1. Rundenanzahl wählen</h3>
+                        <p>Wähle zunächst die Anzahl der Runden, die du spielen möchtest.</p>
+                    </article>
+                    <article>
+                        <h3>2. Treffe deine Wahl</h3>
+                        <ul>
+                            <li>Schere</li>
+                            <li>Stein</li>
+                            <li>Papier</li>
+                        </ul>
+                        <p>Sobald du deine Wahl getroffen hast, wird der Computer automatisch zufällig eine Option
+                            auswählen.
+                        </p>
+                    </article>
+                    <article>
+                        <h3>3. Ergebnis vergleichen</h3>
+                        <ul>
+                            <li>Schere schlägt Papier (zerschneidet es).</li>
+                            <li>Stein schlägt Schere (zerquetscht sie).
+                            </li>
+                            <li>Papier schlägt Stein (wickelt ihn ein).
+                            </li>
+                        </ul>
+                        <p>Wenn du und der Computer die gleiche Wahl treffen, ist die Runde ein Unentschieden.
+                        </p>
+                    </article>
+                    <article>
+                        <h3>4. Spielende</h3>
+                        <p>Sobald die festgelegte Rundenanzahl gespielt ist, wird der endgültige Gewinner angezeigt.
+                        </p>
+                    </article>
+                </section>
+            </div>
+        </div> -->
+
+        <!-- + Game -->
         <section class="game-wrapper">
-            <h1>Let´s Play</h1>
-            <div class="lineTop"></div>
-            <h2>How many rounds?</h2>
-
-            <!-- ? select number of rounds -->
-            <article id="radio-btn">
-                <label for="5Rounds">5 <input type="radio" id="5Rounds" value="5" name="numberOfRounds"
-                        onclick="addRounds()"></label>
-
-                <label for="10Rounds">10 <input type="radio" id="10Rounds" value="10" name="numberOfRounds"
-                        onclick="addRounds()"></label>
-
-                <label for="15Rounds">15 <input type="radio" id="15Rounds" value="15" name="numberOfRounds"
-                        onclick="addRounds()"></label>
-
-                <label for="20Rounds">20 <input type="radio" id="20Rounds" value="20" name="numberOfRounds"
-                        onclick="addRounds()"></label>
+            <article class="game-wrapper-header">
+                <h2 class="winner">Winner name</h2>
+                <article>
+                    <img src="./assets/img/paper.svg" alt="Paper Icon">
+                    <img src="./assets/img/rock.svg" alt="Scissors Icon">
+                </article>
             </article>
 
-            <!--? buttons for rock, paper, scissors and start game -->
-            <article id="chooseYourMove">
 
-                <p id="userChoose">Choose rock, paper or scissors</p>
+
+
+            <!-- ? final winner, computerWins, userWins -->
+            <article class="rounds-won-output">
+                <article>
+                    <div>
+                        <p>User</p>
+                        <p id="userWins">0</p>
+                    </div>
+                    <div>
+                        <p id="computerWins">0</p>
+                        <p>Comp</p>
+                    </div>
+                </article>
+                <article>
+                    <div>
+                        <p id="winnerCurrentRound"></p>
+                    </div>
+
+                    <div>
+                        <p class="final-winner"></p>
+                    </div>
+                </article>
+            </article>
+
+
+
+
+            <!--? buttons for rock, paper, scissors and start game -->
+            <article class="choose-your-move">
+
+                <!-- <p id="userChoose">Choose rock, paper or scissors</p> -->
                 <article class="btn">
-                    <button id="stone" class="move" value="0">
-                        <img src="./assets/img/stone.png" alt="Stone Icon">
-                    </button>
                     <button id="paper" class="move" value="1">
-                        <img src="./assets/img/paper.png" alt="Paper Icon">
+                        <img src="./assets/img/paper.svg" alt="Paper Icon">
+                    </button>
+                    <button id="stone" class="move" value="0">
+                        <img src="./assets/img/rock.svg" alt="Stone Icon">
                     </button>
                     <button id="scissors" class="move" value="2">
-                        <img src="./assets/img/scissors.png" alt="Scissors Icon">
+                        <img src="./assets/img/scissors.svg" alt="Scissors Icon">
                     </button>
                 </article>
                 <p id="whoChoosedWhat"></p>
             </article>
 
 
-            <!-- ? final winner, computerWins, userWins -->
-            <article id="roundsWonOutput">
-                <div>
-                    <p>User</p>
-                    <p id="userWins">0</p>
-                </div>
-                <div>
-                    <p id="computerWins">0</p>
-                    <p>Comp</p>
-                </div>
-            </article>
 
-            <div>
-                <p id="winnerCurrentRound"></p>
-            </div>
+
+
 
 
             <!-- ? line before restart button -->
-            <div class="lineBottom"></div>
+            <!-- <div class="lineBottom"></div> -->
             <!-- ? restart game -->
-            <div id="boxRestart">
+            <!-- <div id="boxRestart">
                 <p id="restart" onclick="location.reload()">Restart</p>
-            </div>
+            </div> -->
+
         </section>
-
-
-
     </main>
 
 
