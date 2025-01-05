@@ -51,54 +51,50 @@ main {
     padding: 5%;
 }
 
-.userName {
-    text-align: center;
+/* SECTION user name and choose rounds */
+.userNameAndRounds {
     font-size: clamp(1rem, 1.5vw, 1.8rem);
-    margin-bottom: 7vh;
     display: flex;
-    align-items: baseline;
-    gap: 0 2em;
+    flex-direction: column;
 }
 
-.userName input {
+.userNameAndRounds > div input {
     border-color: #7D29EA;
     padding: .5em 5em .5em 1em;
     border-radius: 8px;
     outline: none;
+    margin-bottom: 7vh;
 }
 
-.userName button {
+.userNameAndRounds button {
     font-size: clamp(1rem, 1.5vw, 1.8rem);
     color: #7D29EA;
     background-color: transparent;
     border: 2px solid #7D29EA;
     border-radius: 8px;
     padding: .3em 3em;
-    /* width: 50%; */
-    margin-top: 2vh;
     cursor: pointer;
     transition: all .5s linear;
 }
 
-.userName button:hover {
+.userNameAndRounds button:hover {
     background-color: #7D29EA;
     color: white;
 }
 
 /*? styling for radio buttons (numberOfRounds) */
 
-.radio-btn {
-    /* margin-bottom: 5em; */
-    display: flex;
-    flex-direction: column;
+#radio-btn {
+    /* display: flex; */
+    /* flex-direction: column; */
 }
 
-.radio-btn > p {
+#radio-btn > p {
     font-size: clamp(1rem, 1.3vw, 1.8rem);
     margin-bottom: 4%;
 }
 
-.radio-btn div {
+#radio-btn div {
     display: flex;
     gap: 3em;
     margin-bottom: 3em;
@@ -215,29 +211,65 @@ input[type=radio] {
     border: 2px solid #861ecf;
 }
 
+
+/* SECTION game wrapper header */
 .game-wrapper-header {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.game-wrapper-header h2 {
-    font-size: clamp(1rem, 1.5vw, 2.5rem);
-    margin-bottom: 5vh;
-}
-
-.game-wrapper-header article {
+.game-wrapper-header {
     width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
     margin-bottom: 10vh;
 }
 
-.game-wrapper-header article img:nth-of-type(1) {
-    transform: rotate(70deg);
+.game-wrapper-header h2 {
+    font-size: clamp(1rem, 1.5vw, 2.5rem);
 }
+
+.game-wrapper-header img {
+    width: 100px;
+}
+
+.game-wrapper-header img:nth-of-type(1) {
+    transform: rotate(60deg);
+}
+
+
+
+/* SECTION choose your move */
+.choose-your-move {
+    height: 20em;
+}
+
+.choose-your-move article {
+    display: flex;
+    justify-content: center;
+    gap: 0 7em;
+    margin-bottom: 4em;
+}
+
+.move {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.move img {
+    width: 100px;
+}
+
+#whoChoosedWhat {
+    text-align: center;
+    font-size: clamp(1rem, 1.3vw, 1.8rem);
+    margin-bottom: 2em;
+    /* background-color: yellowgreen; */
+}
+
 
 /* SECTION rounds won output */
 .rounds-won-output {
@@ -256,6 +288,7 @@ input[type=radio] {
     justify-content: center;
     align-items: center;
     gap: 1em;
+    margin-bottom: 2em;
 }
 
 #userWins,
@@ -265,117 +298,22 @@ input[type=radio] {
     font-size: clamp(1.3rem, 1.8vw, 2.5rem);
 }
 
-/* SECTION choose your move */
-.choose-your-move {}
-
-.choose-your-move article {
-    display: flex;
-    justify-content: center;
-    gap: 0 7em;
-}
-
-.move {
-    background-color: transparent;
-    border: none;
-}
-
-
-
-
-
-
-/* SECTION buttons for rock, paper, scissors */
-
-/* #chooseYourMove {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#chooseYourMove p:nth-of-type(1) {
-    font-size: clamp(1.2rem, 1.5vw, 1.8rem);
-    margin-bottom: 6%;
-} */
-
-/* #chooseYourMove .btn {
-    width: 90%;
-    height: 8em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0 5%;
-} */
-
-/* #chooseYourMove .btn button {
-    padding: 0 5%;
-    border-radius: 10px;
-    border: transparent;
-    background-color: rgba(255, 166, 0, 0);
-} */
-
-/* #chooseYourMove .btn button img {
-width: 80px;
-height: auto;
-cursor: pointer;
-} */
-
-
-/* after display: none; buttons show the p in red */
-/* #chooseYourMove .btn p {
-    color: red;
-    height: 5em;
-    font-size: clamp(1rem, 1.5vw, 2rem);
-} */
-
-/* #whoChoosedWhat {
-    font-size: clamp(1rem, 1vw, 1.3rem);
-    margin-bottom: 4%;
-    height: 2em;
-} */
-
-
-/* SECTION styling roundsWonOutput */
-/* #roundsWonOutput {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 0 4em;
-    margin-bottom: 5em;
-} */
-
-/* #roundsWonOutput article:nth-of-type(1) {
-    display: flex;
-    gap: 0 5em;
-} */
-
-/* #roundsWonOutput article:nth-of-type(1) div {
-    display: flex;
-    align-items: center;
-    gap: 0 1em;
-} */
-
-/* ? winner current output */
-/* #winnerCurrentRound {
-    height: 3em;
-} */
-
-/*? the winner is output */
-
-/* #finalWinner {
-    width: 50%;
-    margin: 0 auto;
+.rounds-won-output article:nth-of-type(2) div {
+    height: 25px;
     text-align: center;
-    padding-bottom: 5%;
-    font-size: clamp(1rem, 1.3vw, 1.6rem);
-} */
+}
+
+
 
 
 /*? restart game */
-/* #restart {
+#boxRestart {
+    text-align: center;
+    padding: 1vh 0;
+}
+#restart {
     font-size: clamp(1rem, 1.3vw, 1.8rem);
-    color: orange;
+    color: #7D29EA;
     text-decoration: underline;
     cursor: pointer;
-    margin-bottom: 10vh;
-} */
+}

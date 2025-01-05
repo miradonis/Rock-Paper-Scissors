@@ -17,32 +17,35 @@
             <article>
 
                 <!-- + input field for name -->
-                <article class="userName">
+                <article class="userNameAndRounds">
                     <div>
                         <!-- <label for="userName">Gib deinen Namen ein</label> -->
                         <input type="text" name="" id="userName" placeholder="Your name">
                     </div>
-                    <button type="submit">Trallala</button>
+
+                    <!-- select number of rounds -->
+                    <article id="radio-btn">
+                        <p class="choose-rounds">Choose rounds</p>
+                        <div>
+                            <label for="5Rounds">5 <input type="radio" id="5Rounds" value="5"
+                                    name="numberOfRounds"></label>
+
+                            <label for="10Rounds">10 <input type="radio" id="10Rounds" value="10"
+                                    name="numberOfRounds"></label>
+
+                            <label for="15Rounds">15 <input type="radio" id="15Rounds" value="15"
+                                    name="numberOfRounds"></label>
+
+                            <label for="20Rounds">20 <input type="radio" id="20Rounds" value="20"
+                                    name="numberOfRounds"></label>
+                            <!-- <p>Choose rounds</p> -->
+                        </div>
+                    </article>
+                    <button type="submit">Start Game</button>
                 </article>
 
 
-                <!-- select number of rounds -->
-                <article class="radio-btn">
-                    <p class="choose-rounds">Choose rounds</p>
-                    <div>
-                        <label for="5Rounds">5 <input type="radio" id="5Rounds" value="5" name="numberOfRounds"></label>
 
-                        <label for="10Rounds">10 <input type="radio" id="10Rounds" value="10"
-                                name="numberOfRounds"></label>
-
-                        <label for="15Rounds">15 <input type="radio" id="15Rounds" value="15"
-                                name="numberOfRounds"></label>
-
-                        <label for="20Rounds">20 <input type="radio" id="20Rounds" value="20"
-                                name="numberOfRounds"></label>
-                        <p>Choose rounds</p>
-                    </div>
-                </article>
             </article>
         </section>
         <!-- + Explanation -->
@@ -98,46 +101,14 @@
         <!-- + Game -->
         <section class="game-wrapper">
             <article class="game-wrapper-header">
-                <h2 class="winner">Winner name</h2>
-                <article>
-                    <img src="./assets/img/paper.svg" alt="Paper Icon">
-                    <img src="./assets/img/rock.svg" alt="Scissors Icon">
-                </article>
+                <img src="./assets/img/paper.svg" alt="Paper Icon">
+                <h2 class="winner final-winner">Game</h2>
+                <img src="./assets/img/rock.svg" alt="Scissors Icon">
             </article>
-
-
-
-
-            <!-- ? final winner, computerWins, userWins -->
-            <article class="rounds-won-output">
-                <article>
-                    <div>
-                        <p>User</p>
-                        <p id="userWins">0</p>
-                    </div>
-                    <div>
-                        <p id="computerWins">0</p>
-                        <p>Comp</p>
-                    </div>
-                </article>
-                <article>
-                    <div>
-                        <p id="winnerCurrentRound"></p>
-                    </div>
-
-                    <div>
-                        <p class="final-winner"></p>
-                    </div>
-                </article>
-            </article>
-
-
 
 
             <!--? buttons for rock, paper, scissors and start game -->
             <article class="choose-your-move">
-
-                <!-- <p id="userChoose">Choose rock, paper or scissors</p> -->
                 <article class="btn">
                     <button id="paper" class="move" value="1">
                         <img src="./assets/img/paper.svg" alt="Paper Icon">
@@ -153,18 +124,30 @@
             </article>
 
 
+            <!-- ? final winner, computerWins, userWins -->
+            <article class="rounds-won-output">
+                <article>
+                    <div>
+                        <p>User</p>
+                        <p id="userWins">0</p>
+                    </div>
+                    <div>
+                        <p id="computerWins">0</p>
+                        <p>PC</p>
+                    </div>
+                </article>
+                <article>
+                    <div>
+                        <p id="winnerCurrentRound"></p>
+                    </div>
+                </article>
+            </article>
 
 
-
-
-
-            <!-- ? line before restart button -->
-            <!-- <div class="lineBottom"></div> -->
             <!-- ? restart game -->
-            <!-- <div id="boxRestart">
+            <div id="boxRestart">
                 <p id="restart" onclick="location.reload()">Restart</p>
-            </div> -->
-
+            </div>
         </section>
     </main>
 

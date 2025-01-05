@@ -18,7 +18,8 @@ const finalWinner = document.querySelector(".final-winner") as HTMLElement;
 const restartBtn = document.querySelector("#restart") as HTMLElement;
 const stonePaperScissors: string[] = ["Stein", "Papier", "Schere"];
 
-const radioWrapper = document.querySelector(".radio-btn") as HTMLElement;
+// ! wenn ich die id radio-btn zu class änder funktioniert es nicht mehr. wieso????
+const radioWrapper = document.querySelector("#radio-btn") as HTMLElement;
 
 
 let rounds: number = 0;
